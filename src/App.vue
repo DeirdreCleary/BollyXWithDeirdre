@@ -28,22 +28,8 @@
       <div class="navbar-end">
         <div class="navbar-menu" v-bind:class="{ 'is-active': isActive }">
           <router-link to="/" class="navbar-item r-item">Home</router-link>
-          <router-link to="faq" class="navbar-item r-item"
-            >Features</router-link
-          >
-          <router-link to="faq" class="navbar-item r-item">About</router-link>
+          <router-link to="about" class="navbar-item r-item">About</router-link>
           <router-link to="faq" class="navbar-item r-item">FAQ</router-link>
-
-          <div class="navbar-item">
-            <p class="control">
-              <a class="button is-primary is-outlined">
-                <span class="icon">
-                  <i class="fa fa-download"></i>
-                </span>
-                <span>Join Now</span>
-              </a>
-            </p>
-          </div>
         </div>
       </div>
       </div>
@@ -116,7 +102,7 @@ a.r-item
 
 footer
   background-color: $primary !important
-  color: gray
+  color: black
 
   .icon
     color: #fff

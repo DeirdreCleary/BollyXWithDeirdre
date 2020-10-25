@@ -8,7 +8,7 @@
               <div class="is-paddingless">
                 <h2 class="subtitle is-5">{{ subheading }}</h2>
               </div>
-              <a class="button is-large is-primary" id="learn">Learn more</a>
+              <router-link to="about" class="button is-large is-primary" id="learn">Learn more</router-link>
             </div>
             <figure class="image is-one-third column is-hidden-mobile padded">
               <img src="../assets/X.jpg" />

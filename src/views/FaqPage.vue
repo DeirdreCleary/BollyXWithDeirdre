@@ -1,17 +1,17 @@
 <template>
-  <div class="home">
-    <Hero />
-    <Spotify />
+  <div>
+    <Hero/>
+    <Faq />
   </div>
 </template>
 
 <script>
 import Hero from "../components/Hero";
-import Spotify from "../components/Spotify";
+import Faq from "../components/Faq";
 
 export default {
-  name: "home",
-  components: { Hero, Spotify },
+  name: "FaqPage",
+  components: { Hero, Faq },
 };
 </script>
 
