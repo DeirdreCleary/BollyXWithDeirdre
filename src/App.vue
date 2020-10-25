@@ -1,30 +1,118 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div id="app" class="content">
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <router-link to="/" class="navbar-item"
+          >BollyX With Deirdre</router-link
+        >
+
+        <a
+          class="navbar-burger"
+          role="button"
+          aria-label="menu"
+          aria-expanded="false"
+          v-on:click="toggleNav"
+          v-bind:class="{ 'is-active': isActive }"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div class="navbar-end">
+        <div class="navbar-menu" v-bind:class="{ 'is-active': isActive }">
+          <router-link to="/" class="navbar-item r-item">Home</router-link>
+          <router-link to="faq" class="navbar-item r-item"
+            >Features</router-link
+          >
+          <router-link to="faq" class="navbar-item r-item">About</router-link>
+          <router-link to="faq" class="navbar-item r-item">FAQ</router-link>
+
+          <div class="navbar-item">
+            <p class="control">
+              <a class="button is-primary is-outlined">
+                <span class="icon">
+                  <i class="fa fa-download"></i>
+                </span>
+                <span>Join Now</span>
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <router-view></router-view>
+
+    <footer class="footer is-primary">
+      <div class="container">
+        <div class="columns">
+          <div class="column">
+            <p>
+              &copy;BollyX and Deirdre Cleary
+            </p>
+          </div>
+          <div class="column has-text-right">
+            <a class="icon" href="https://www.instagram.com/bollyxwithdeirdre/"
+              ><i class="fa fa-instagram fa-2x"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </footer>
   </div>
-  <router-view />
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+export default {
+  name: "app",
+  data: function() {
+    return {
+      isActive: false
+    };
+  },
+  methods: {
+    toggleNav: function() {
+      this.isActive = !this.isActive;
+    }
+  }
+};
+</script>
 
-#nav {
-  padding: 30px;
-}
+<style lang="sass">
+@import 'mq'
+@import '../node_modules/bulma/bulma.sass'
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+.content
+  padding: 0
+  margin: 0
 
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+.navbar
+  background-color: $primary
+  a:hover
+    color: gray
+
+.navbar-brand a
+  color: black
+  font-weight: bold
+
+a.r-item
+  color:black
+  padding: 0.5rem 1.75rem
+  +mobile
+    color: gray
+    &:hover
+      background-color: #F1F1F1
+
+.navbar-burger span
+  background-color: black
+
+footer
+  background-color: $primary !important
+  color: gray
+
+  .icon
+    color: #fff
+    margin-left: 20px
 </style>
