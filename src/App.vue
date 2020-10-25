@@ -79,6 +79,7 @@ export default {
 .content
   padding: 0
   margin: 0
+  font-family: 'Lato', sans-serif
 
 .navbar
   background-color: $primary
