@@ -1,6 +1,11 @@
 <template>
   <div id="app" class="content">
-    <nav class="navbar" role="navigation" aria-label="main navigation">
+    <nav
+      class="navbar bd-navbar"
+      role="navigation"
+      aria-label="main navigation"
+    >
+    <div class="container">
       <div class="navbar-brand">
         <router-link to="/" class="navbar-item"
           >BollyX With Deirdre</router-link
@@ -41,6 +46,7 @@
           </div>
         </div>
       </div>
+      </div>
     </nav>
 
     <router-view></router-view>
@@ -69,14 +75,14 @@ export default {
   name: "app",
   data: function() {
     return {
-      isActive: false
+      isActive: false,
     };
   },
   methods: {
     toggleNav: function() {
       this.isActive = !this.isActive;
-    }
-  }
+    },
+  },
 };
 </script>
 
