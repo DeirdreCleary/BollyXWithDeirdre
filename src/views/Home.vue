@@ -2,6 +2,7 @@
   <div class="home">
     <Hero />
     <Description />
+    <Official />
     <Spotify />
     <Faq />
   </div>
@@ -12,10 +13,11 @@ import Spotify from "../components/Spotify";
 import Hero from "../components/Hero";
 import Description from "../components/Description";
 import Faq from "../components/Faq";
+import Official from "../components/Official";
 
 export default {
   name: "home",
-  components: { Spotify, Hero, Description, Faq }
+  components: { Spotify, Hero, Description, Faq, Official },
 };
 </script>
 
