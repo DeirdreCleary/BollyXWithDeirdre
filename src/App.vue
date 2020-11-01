@@ -79,7 +79,7 @@ export default {
   name: "app",
   data: function() {
     return {
-      isActive: false,
+      isActive: false
     };
   },
   methods: {
@@ -88,8 +88,8 @@ export default {
     },
     hideNav: function() {
       this.isActive = false;
-    },
-  },
+    }
+  }
 };
 </script>
 
