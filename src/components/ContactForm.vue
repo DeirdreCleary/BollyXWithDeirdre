@@ -3,12 +3,12 @@
     <div class="container">
       <form
         name="contact"
-        @submit="checkForm"
         @submit.prevent="handleSubmit"
         novalidate="true"
         method="POST"
         data-netlify="true"
         netlify-honeypot="bot-field"
+        v-if="!submittedSuccessfully && !failedToSubmit"
       >
         <p hidden class="is-hidden">
           <label
@@ -76,6 +76,23 @@
           </div>
         </div>
       </form>
+      <div v-if="submittedSuccessfully">
+        <h2 class="mgn">
+          Thanks for getting in touch! I'll get back to you as soon as possible.
+        </h2>
+        <router-link to="/" class="button is-large is-primary mgn" id="learn"
+          >Back to home</router-link
+        >
+      </div>
+      <div v-if="failedToSubmit">
+        <h2>
+          Oops! Looks like something went wrong. Contact me on
+          bollyxwithdeirdre@gmail.com
+        </h2>
+        <router-link to="/" class="button is-large is-primary mgn" id="learn"
+          >Back to home</router-link
+        >
+      </div>
     </div>
   </section>
 </template>
@@ -93,7 +110,16 @@ export default {
       isNamePopulated: true,
       isEmailPopulated: true,
       isValidEmail: true,
+      submittedSuccessfully: false,
+      failedToSubmit: false,
     };
+  },
+  created: function () {
+      this.isNamePopulated= true;
+      this.isEmailPopulated= true;
+      this.isValidEmail= true;
+      this.submittedSuccessfully= false;
+      this.failedToSubmit= false;
   },
   methods: {
     checkForm: function(e) {
@@ -101,13 +127,13 @@ export default {
       this.isEmailPopulated = true;
       this.isValidEmail = true;
 
-      if (!this.name) {
+      if (!this.form.name) {
         this.isNamePopulated = false;
       }
 
-      if (!this.email) {
+      if (!this.form.email) {
         this.isEmailPopulated = false;
-      } else if (!this.validEmail(this.email)) {
+      } else if (!this.validEmail(this.form.email)) {
         this.isValidEmail = false;
       }
 
@@ -115,6 +141,8 @@ export default {
         return true;
       }
 
+      this.submittedSuccessfully = false;
+      this.failedToSubmit = false;
       e.preventDefault();
     },
     validEmail: function(email) {
@@ -127,6 +155,9 @@ export default {
       );
     },
     handleSubmit: function() {
+      if (!this.checkForm()) {
+        return;
+      }
       fetch("/", {
         method: "post",
         headers: {
@@ -134,8 +165,16 @@ export default {
         },
         body: this.encode({ "form-name": "contact", ...this.form }),
       })
-        .then(() => console.log("Successfully sent"))
-        .catch((e) => console.error(e));
+        .then(() => {
+          console.log("Successfully sent");
+          this.submittedSuccessfully = true;
+          this.failedToSubmit = false;
+        })
+        .catch((e) => {
+          console.error(e);
+          this.submittedSuccessfully = false;
+          this.failedToSubmit = true;
+        });
     },
     encode(data) {
       return Object.keys(data)
@@ -152,5 +191,5 @@ export default {
 <style lang="sass" scoped>
 @import '../mq'
 .mgn
-  margin: 2em
+  margin: 1em 0 0 1em
 </style>
