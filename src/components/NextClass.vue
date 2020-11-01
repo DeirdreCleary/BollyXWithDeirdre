@@ -39,7 +39,7 @@
 
 <script>
 export default {
-  name: "NextClass",
+  name: "NextClass"
 };
 </script>
 

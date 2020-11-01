@@ -15,7 +15,7 @@
 
 <script>
 export default {
-  name: "YouTube",
+  name: "YouTube"
 };
 </script>
 
@@ -35,5 +35,4 @@ export default {
 	left: 0
 	width: 100%
 	height: 100%
-
 </style>

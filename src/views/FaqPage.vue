@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Hero/>
+    <Hero />
     <Faq />
   </div>
 </template>
@@ -11,7 +11,7 @@ import Faq from "../components/Faq";
 
 export default {
   name: "FaqPage",
-  components: { Hero, Faq },
+  components: { Hero, Faq }
 };
 </script>
 

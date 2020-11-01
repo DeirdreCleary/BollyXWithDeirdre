@@ -1,19 +1,20 @@
 <template>
   <div class="home">
     <section class="container">
-    <h1>
+      <h1>
         Uh oh! Looks like somethings gone wrong
-    </h1>
-    <router-link to="/" class="button is-large is-primary mgn" id="learn">Back to home</router-link>
+      </h1>
+      <router-link to="/" class="button is-large is-primary mgn" id="learn"
+        >Back to home</router-link
+      >
     </section>
   </div>
 </template>
 
 <script>
-
 export default {
   name: "home",
-  components: {  },
+  components: {}
 };
 </script>
 
@@ -26,5 +27,4 @@ h1
 
 .mgn
   margin: 1rem
-
 </style>

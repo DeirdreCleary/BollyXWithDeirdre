@@ -5,34 +5,51 @@
       role="navigation"
       aria-label="main navigation"
     >
-    <div class="container">
-      <div class="navbar-brand">
-        <router-link to="/" class="navbar-item"
-          >BollyX With Deirdre</router-link
-        >
+      <div class="container">
+        <div class="navbar-brand">
+          <router-link to="/" class="navbar-item"
+            >BollyX With Deirdre</router-link
+          >
 
-        <a
-          class="navbar-burger"
-          role="button"
-          aria-label="menu"
-          aria-expanded="false"
-          v-on:click="toggleNav"
-          v-bind:class="{ 'is-active': isActive }"
-        >
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
-      </div>
-
-      <div class="navbar-end">
-        <div class="navbar-menu" v-bind:class="{ 'is-active': isActive }">
-          <router-link to="/" v-on:click="hideNav" class="navbar-item r-item">Home</router-link>
-          <router-link to="about" v-on:click="hideNav" class="navbar-item r-item">About</router-link>
-          <router-link to="faq" v-on:click="hideNav" class="navbar-item r-item">FAQ</router-link>
-          <router-link to="contact" v-on:click="hideNav" class="navbar-item r-item">Contact</router-link>
+          <a
+            class="navbar-burger"
+            role="button"
+            aria-label="menu"
+            aria-expanded="false"
+            v-on:click="toggleNav"
+            v-bind:class="{ 'is-active': isActive }"
+          >
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
         </div>
-      </div>
+
+        <div class="navbar-end">
+          <div class="navbar-menu" v-bind:class="{ 'is-active': isActive }">
+            <router-link to="/" v-on:click="hideNav" class="navbar-item r-item"
+              >Home</router-link
+            >
+            <router-link
+              to="about"
+              v-on:click="hideNav"
+              class="navbar-item r-item"
+              >About</router-link
+            >
+            <router-link
+              to="faq"
+              v-on:click="hideNav"
+              class="navbar-item r-item"
+              >FAQ</router-link
+            >
+            <router-link
+              to="contact"
+              v-on:click="hideNav"
+              class="navbar-item r-item"
+              >Contact</router-link
+            >
+          </div>
+        </div>
       </div>
     </nav>
 
@@ -71,7 +88,7 @@ export default {
     },
     hideNav: function() {
       this.isActive = false;
-    }
+    },
   },
 };
 </script>

@@ -111,17 +111,17 @@ export default {
       form: {
         name: null,
         email: null,
-        message: null,
+        message: null
       },
       formValidation: {
         isNamePopulated: true,
         isEmailPopulated: true,
-        isValidEmail: true,
+        isValidEmail: true
       },
       formCompletion: {
         submittedSuccessfully: false,
-        failedToSubmit: false,
-      },
+        failedToSubmit: false
+      }
     };
   },
   created: function() {
@@ -174,9 +174,9 @@ export default {
       fetch("/", {
         method: "post",
         headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
+          "Content-Type": "application/x-www-form-urlencoded"
         },
-        body: this.encode({ "form-name": "contact", ...this.form }),
+        body: this.encode({ "form-name": "contact", ...this.form })
       })
         .then(() => {
           console.log("Successfully sent");
@@ -195,8 +195,8 @@ export default {
           (key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`
         )
         .join("&");
-    },
-  },
+    }
+  }
 };
 </script>
 

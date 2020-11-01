@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <Hero/>
+    <Hero />
     <ContactForm />
   </div>
 </template>
@@ -11,7 +11,7 @@ import ContactForm from "../components/ContactForm";
 
 export default {
   name: "about",
-  components: { Hero, ContactForm },
+  components: { Hero, ContactForm }
 };
 </script>
 

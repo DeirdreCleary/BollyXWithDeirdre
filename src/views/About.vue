@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-  <Hero/>
+    <Hero />
     <Description />
     <Official />
     <YouTube />
@@ -15,7 +15,7 @@ import Official from "../components/Official";
 
 export default {
   name: "about",
-  components: { Hero, Description, YouTube, Official },
+  components: { Hero, Description, YouTube, Official }
 };
 </script>
 

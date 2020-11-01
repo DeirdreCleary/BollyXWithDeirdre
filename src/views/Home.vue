@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <Hero :showLearnMore="true"/>
+    <Hero :showLearnMore="true" />
     <NextClass />
     <Spotify />
   </div>
@@ -13,7 +13,7 @@ import Spotify from "../components/Spotify";
 
 export default {
   name: "home",
-  components: { Hero, Spotify, NextClass },
+  components: { Hero, Spotify, NextClass }
 };
 </script>
 

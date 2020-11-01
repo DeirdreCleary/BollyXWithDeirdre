@@ -63,15 +63,15 @@ export default {
   data: function() {
     return {
       discount: "BXZJ399",
-      copied: false,
+      copied: false
     };
   },
   methods: {
     async copy(s) {
       await navigator.clipboard.writeText(s);
       this.copied = true;
-    },
-  },
+    }
+  }
 };
 </script>
 
