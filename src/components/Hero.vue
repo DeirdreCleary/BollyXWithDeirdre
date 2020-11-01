@@ -8,7 +8,7 @@
               <div class="is-paddingless">
                 <h2 class="subtitle is-5">{{ subheading }}</h2>
               </div>
-              <router-link to="about" class="button is-large is-primary" id="learn">Learn more</router-link>
+              <router-link v-if='showLearnMore' to="about" class="button is-large is-primary" id="learn">Learn more</router-link>
             </div>
             <figure class="image is-one-third column is-hidden-mobile padded">
               <img src="../assets/X.jpg" />
@@ -29,6 +29,9 @@ export default {
         "A Bollywood inspired workout guaranteed to get your heartrate up put a smile on your face",
     };
   },
+  props: {
+    showLearnMore: Boolean
+  }
 };
 </script>
 

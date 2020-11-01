@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <Hero />
+    <Hero :showLearnMore="true"/>
     <NextClass />
     <Spotify />
   </div>
