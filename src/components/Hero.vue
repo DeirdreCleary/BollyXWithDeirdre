@@ -32,7 +32,7 @@ export default {
     return {
       heading: "BollyX with Deirdre",
       subheading:
-        "A Bollywood inspired workout guaranteed to get your heartrate up put a smile on your face"
+        "A Bollywood inspired workout guaranteed to get your heartrate up and put a smile on your face"
     };
   },
   props: {
