@@ -1,6 +1,16 @@
 <template>
   <section class="section">
     <div class="container">
+      <h2 class="title mb-6">
+        Contact Us
+      </h2>
+      <h4 class="title mb-6">
+        Have a burning question not covered in the <router-link
+              to="faq"
+              class="link"
+              id="learn"
+              >FAQs</router-link>? Get in touch!
+      </h4>
       <form
         name="contact"
         @submit.prevent="handleSubmit"
@@ -205,4 +215,7 @@ export default {
 @import '../mq'
 .mgn
   margin: 1em 0 0 1em
+
+.link
+  color: $primary
 </style>
