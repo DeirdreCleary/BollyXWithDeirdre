@@ -8,7 +8,10 @@
         method="POST"
         data-netlify="true"
         netlify-honeypot="bot-field"
-        v-if="!submittedSuccessfully && !failedToSubmit"
+        v-if="
+          !this.formCompletion.submittedSuccessfully &&
+            !this.formCompletion.failedToSubmit
+        "
       >
         <p hidden class="is-hidden">
           <label
@@ -29,7 +32,7 @@
               <i class="fa fa-user"></i>
             </span>
           </div>
-          <p class="help is-danger" v-if="!isNamePopulated">
+          <p class="help is-danger" v-if="!this.formValidation.isNamePopulated">
             Uh oh! Looks like you forgot to include your name. Please enter it
             above!
           </p>
@@ -49,10 +52,13 @@
               <i class="fa fa-envelope"></i>
             </span>
           </div>
-          <p class="help is-danger" v-if="!isEmailPopulated">
+          <p
+            class="help is-danger"
+            v-if="!this.formValidation.isEmailPopulated"
+          >
             Please include your email or I won't know how to get back to you!
           </p>
-          <p class="help is-danger" v-if="!isValidEmail">
+          <p class="help is-danger" v-if="!this.formValidation.isValidEmail">
             Oops! Looks like there's a problem with your email format. Double
             check it please!
           </p>
@@ -76,7 +82,7 @@
           </div>
         </div>
       </form>
-      <div v-if="submittedSuccessfully">
+      <div v-if="this.formCompletion.submittedSuccessfully">
         <h2 class="mgn">
           Thanks for getting in touch! I'll get back to you as soon as possible.
         </h2>
@@ -107,42 +113,47 @@ export default {
         email: null,
         message: null,
       },
-      isNamePopulated: true,
-      isEmailPopulated: true,
-      isValidEmail: true,
-      submittedSuccessfully: false,
-      failedToSubmit: false,
+      formValidation: {
+        isNamePopulated: true,
+        isEmailPopulated: true,
+        isValidEmail: true,
+      },
+      formCompletion: {
+        submittedSuccessfully: false,
+        failedToSubmit: false,
+      },
     };
   },
-  created: function () {
-      this.isNamePopulated= true;
-      this.isEmailPopulated= true;
-      this.isValidEmail= true;
-      this.submittedSuccessfully= false;
-      this.failedToSubmit= false;
+  created: function() {
+    this.resetProperties();
   },
   methods: {
+    resetProperties: function() {
+      this.formValidation.isNamePopulated = true;
+      this.formValidation.isEmailPopulated = true;
+      this.formValidation.isValidEmail = true;
+      this.formCompletion.submittedSuccessfully = false;
+      this.formCompletion.failedToSubmit = false;
+    },
     checkForm: function(e) {
-      this.isNamePopulated = true;
-      this.isEmailPopulated = true;
-      this.isValidEmail = true;
+      this.resetProperties();
 
       if (!this.form.name) {
-        this.isNamePopulated = false;
+        this.formValidation.isNamePopulated = false;
       }
 
       if (!this.form.email) {
-        this.isEmailPopulated = false;
+        this.formValidation.isEmailPopulated = false;
       } else if (!this.validEmail(this.form.email)) {
-        this.isValidEmail = false;
+        this.formValidation.isValidEmail = false;
       }
 
       if (!this.hasError()) {
         return true;
       }
 
-      this.submittedSuccessfully = false;
-      this.failedToSubmit = false;
+      this.this.formCompletion.submittedSuccessfully = false;
+      this.formCompletion.failedToSubmit = false;
       e.preventDefault();
     },
     validEmail: function(email) {
@@ -151,7 +162,9 @@ export default {
     },
     hasError: function() {
       return (
-        !this.isNamePopulated || !this.isEmailPopulated || !this.isValidEmail
+        !this.formValidation.isNamePopulated ||
+        !this.formValidation.isEmailPopulated ||
+        !this.formValidation.isValidEmail
       );
     },
     handleSubmit: function() {
@@ -167,13 +180,13 @@ export default {
       })
         .then(() => {
           console.log("Successfully sent");
-          this.submittedSuccessfully = true;
-          this.failedToSubmit = false;
+          this.formCompletion.submittedSuccessfully = true;
+          this.formCompletion.failedToSubmit = false;
         })
         .catch((e) => {
           console.error(e);
-          this.submittedSuccessfully = false;
-          this.failedToSubmit = true;
+          this.is.formCompletion.submittedSuccessfully = false;
+          this.formCompletion.failedToSubmit = true;
         });
     },
     encode(data) {
