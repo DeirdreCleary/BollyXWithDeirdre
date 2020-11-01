@@ -27,10 +27,10 @@
 
       <div class="navbar-end">
         <div class="navbar-menu" v-bind:class="{ 'is-active': isActive }">
-          <router-link to="/" class="navbar-item r-item">Home</router-link>
-          <router-link to="about" class="navbar-item r-item">About</router-link>
-          <router-link to="faq" class="navbar-item r-item">FAQ</router-link>
-          <router-link to="contact" class="navbar-item r-item">Contact</router-link>
+          <router-link to="/" v-on:click="hideNav" class="navbar-item r-item">Home</router-link>
+          <router-link to="about" v-on:click="hideNav" class="navbar-item r-item">About</router-link>
+          <router-link to="faq" v-on:click="hideNav" class="navbar-item r-item">FAQ</router-link>
+          <router-link to="contact" v-on:click="hideNav" class="navbar-item r-item">Contact</router-link>
         </div>
       </div>
       </div>
@@ -69,6 +69,9 @@ export default {
     toggleNav: function() {
       this.isActive = !this.isActive;
     },
+    hideNav: function() {
+      this.isActive = false;
+    }
   },
 };
 </script>
