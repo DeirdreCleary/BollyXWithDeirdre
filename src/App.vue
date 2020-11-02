@@ -48,6 +48,17 @@
               class="navbar-item r-item"
               >Contact</router-link
             >
+
+            <div class="navbar-item">
+              <a
+                class="button"
+                href="https://us02web.zoom.us/j/85401207030?pwd=enJhVmZKZzQ5ckt6MWFUd080d2JuUT09"
+                target="_blank"
+                id="learn"
+              >
+                <span>Join Now</span>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -64,7 +75,10 @@
             </p>
           </div>
           <div class="column has-text-right">
-            <a class="icon" href="https://www.instagram.com/bollyxwithdeirdre/"
+            <a
+              class="icon"
+              target="_blank"
+              href="https://www.instagram.com/bollyxwithdeirdre/"
               ><i class="fa fa-instagram fa-2x"></i
             ></a>
           </div>
@@ -106,6 +120,13 @@ export default {
   background-color: $primary
   a:hover
     color: gray
+  .button
+    border: none
+    color: black
+    background-color: white
+    &:hover
+      color: $primary
+      background-color: black
 
 .navbar-brand a
   color: black

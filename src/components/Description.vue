@@ -14,7 +14,9 @@
             smiling. At the very core of a BollyX workout is the inspiration it
             draws from the music and dance of Bollywood, the film industry of
             India. Learn more at
-            <a href="https://bollyx.com/" class="link">BollyX.com</a>
+            <a href="https://bollyx.com/" target="_blank" class="link"
+              >BollyX.com</a
+            >
           </p>
         </div>
       </div>

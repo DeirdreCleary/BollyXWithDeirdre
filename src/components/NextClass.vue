@@ -18,6 +18,7 @@
                 href="https://us02web.zoom.us/j/85401207030?pwd=enJhVmZKZzQ5ckt6MWFUd080d2JuUT09"
                 class="button is-large is-primary"
                 id="learn"
+                target="_blank"
                 >Join class</a
               >
             </div>
