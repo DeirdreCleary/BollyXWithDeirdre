@@ -150,4 +150,7 @@ footer
   .icon
     color: #fff
     margin-left: 20px
+
+.link
+  color: $primary
 </style>

@@ -76,7 +76,4 @@ export default {
 @import '../mq'
 .mgn
   margin: 2em
-
-.link
-  color: $primary
 </style>

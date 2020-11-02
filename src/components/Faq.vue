@@ -27,6 +27,16 @@
               </div>
             </div>
           </div>
+          <div class="card block">
+            <div class="card-content">
+              <h2 class="title is-5">
+                If you have a question that's not covered here, please
+                <router-link to="/contact" class="link" id="learn"
+                  >get in touch</router-link
+                >
+              </h2>
+            </div>
+          </div>
         </div>
       </section>
     </div>
