@@ -9,7 +9,7 @@
                 <strong>Join my next class!</strong>
               </p>
               <p class="subtitle is-5">
-                Our next class is this Wednesday at 8pm on Zoom.
+                Our next class is this Wednesday at 8pm GMT on Zoom.
               </p>
               <p class="subtitle is-6">
                 See you then!
