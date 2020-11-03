@@ -4,7 +4,7 @@
       <h2 class="title mb-6">
         Contact Us
       </h2>
-      <h4 class="title mb-6">
+      <h4 v-if="!this.formCompletion.submittedSuccessfully" class="title mb-6">
         Have a burning question not covered in the <router-link
               to="faq"
               class="link"
