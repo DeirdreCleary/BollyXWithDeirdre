@@ -10,6 +10,19 @@
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <script type="text/javascript">
+      window.addeventasync = function() {
+        addeventatc.settings({
+          css: false,
+          appleical: { show: true, text: "Apple Calendar" },
+          google: { show: true, text: "Google Calendar" },
+          office365: { show: true, text: "Office 365" },
+          outlook: { show: true, text: "Outlook" },
+          outlookcom: { show: true, text: "Outlook.com" },
+          yahoo: { show: false }
+        });
+      };
+    </script>
   </head>
   <body>
     <div name="hiddenForm" hidden>
@@ -27,7 +40,7 @@
 
         <input name="name" type="text" />
         <input name="email" type="email" />
-        <textarea name="message" > </textarea>
+        <textarea name="message"> </textarea>
         <button class="button is-link">Submit</button>
       </form>
     </div>

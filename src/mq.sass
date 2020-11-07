@@ -1,3 +1,4 @@
+// @import "..\node_modules\font-awesome\scss\font-awesome.scss";
 
 $primary: #FDD800 !default
 
@@ -30,3 +31,50 @@ $fullhd: 1384px !default
 =desktop-only
   @media screen and (min-width: $desktop) and (max-width: $widescreen - 1px)
     @content
+
+
+/* The button
+
+.addeventatc
+  border: none
+  margin-top: 1em
+  position: relative
+  text-align: center
+  background: black
+  color: #fff !important
+
+  &:hover
+    color: black !important
+    text-decoration: none
+    background-color: $primary
+
+.addeventatc
+  .start, .end, .timezone, .title, .description, .location, .date_format, .recurring
+    display: none !important
+
+/* Drop down
+
+.addeventatc_dropdown
+  width: 230px
+  position: absolute
+  color: #000 !important
+  line-height: 100%
+  background: #fff
+  font-size: 15px
+  text-align: left
+  display: none
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 10px 26px
+
+  span
+    display: block
+    line-height: 100%
+    cursor: pointer
+    font-size: 15px
+    color: #333
+    font-weight: 600
+    padding: 14px 10px 14px 10px
+    margin: -2px 0px
+
+    &:hover
+      background-color: #f4f4f4
+      color: #000
