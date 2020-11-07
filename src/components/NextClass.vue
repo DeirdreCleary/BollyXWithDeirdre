@@ -30,6 +30,7 @@
                 <span class="timezone">{{event.timezone}}</span>
                 <span class="title">{{event.title}}</span>
                 <span class="description">{{event.description}}</span>
+                <span class="location">{{event.location}}</span>
               </div>
               </div>
               <div>
@@ -41,6 +42,7 @@
                 <span class="timezone">{{event.timezone}}</span>
                 <span class="title">{{event.title}}</span>
                 <span class="description">{{event.description}}</span>
+                <span class="location">{{event.location}}</span>
                 <span class="recurring">{{event.recurring}}</span>
               </div>
               </div>
@@ -73,7 +75,7 @@ export default {
         timezone: "Europe/Dublin",
         title: "BollyX With Deirdre",
         description:
-          "30 minute Bollywood inspired dance workout!<br /><br />Get the latest details on https://bollyxwithdeirdre.netlify.app/<br /><br />Join Zoom Meeting <br /><br />https://us02web.zoom.us/j/85401207030?pwd=enJhVmZKZzQ5ckt6MWFUd080d2JuUT09 <br /><br />Meeting ID: 854 0120 7030 <br />Passcode: BollyX",
+          "30 minute Bollywood inspired dance workout!<br /><br />Get the latest details at https://bollyxwithdeirdre.netlify.app/<br /><br />Join Zoom Meeting <br />https://us02web.zoom.us/j/85401207030?pwd=enJhVmZKZzQ5ckt6MWFUd080d2JuUT09 <br /><br />Meeting ID: 854 0120 7030 <br />Passcode: BollyX",
         location:
           "https://us02web.zoom.us/j/85401207030?pwd=enJhVmZKZzQ5ckt6MWFUd080d2JuUT09",
         recurring: "FREQ=WEEKLY;BYDAY=WE"
