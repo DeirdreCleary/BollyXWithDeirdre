@@ -1,19 +1,38 @@
 <template>
   <div class="home">
-    <Hero :showLearnMore="true" />
-    <NextClass />
+    <Hero showLearnMore />
+    <div v-for="event in events" :key="event.title">
+      <Event
+        :webTitle="event.webTitle"
+        :meetingTitle="event.meetingTitle"
+        :description="event.description"
+        :image="event.image"
+        :start="event.start"
+        :end="event.end"
+        :recurring="event.recurring"
+        :meetingId="event.meetingId"
+        :passcode="event.passcode"
+        :url="event.url"
+      />
+    </div>
     <Spotify />
   </div>
 </template>
 
 <script>
 import Hero from "../components/Hero";
-import NextClass from "../components/NextClass";
 import Spotify from "../components/Spotify";
+import Event from "../components/Event";
+import json from "../json/events.json";
 
 export default {
   name: "home",
-  components: { Hero, Spotify, NextClass }
+  components: { Hero, Spotify, Event },
+  data() {
+    return {
+      events: json
+    };
+  }
 };
 </script>
 

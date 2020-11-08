@@ -1,0 +1,26 @@
+[
+    {
+        "webTitle": "Diwali class",
+        "meetingTitle": "BollyX With Deirdre: Diwali Class",
+        "description": "Join me for a special class this Saturday to celebrate Diwali!",
+        "image": "Diwali.jpg",
+        "start": "14-11-2020 10:00 AM",
+        "end": "14-11-2020 10:30 AM",
+        "url": "https://us02web.zoom.us/j/85401207030?pwd=enJhVmZKZzQ5ckt6MWFUd080d2JuUT09",
+        "meetingId": "854 0120 7030",
+        "passcode": "BollyX"
+    },
+    {
+        "webTitle": "Weekly class",
+        "meetingTitle": "BollyX With Deirdre",
+        "description": "Our next class is this Wednesday at 8pm GMT on Zoom.",
+        "image": "ClassAnnouncement.png",
+        "start": "11-11-2020 08:00 PM",
+        "end": "11-11-2020 08:30 PM",
+        "recurring": "FREQ=WEEKLY;BYDAY=WE",
+        "url": "https://us02web.zoom.us/j/85401207030?pwd=enJhVmZKZzQ5ckt6MWFUd080d2JuUT09",
+        "meetingId": "854 0120 7030",
+        "passcode": "BollyX"
+    }
+  ]
+  
