@@ -4,7 +4,7 @@
       <div class="card is-horizontal mgn">
         <div class="card-content">
           <div class="columns">
-            <div class="column is-two-fifths">
+            <div class="column is-half">
               <p class="title">
                 <strong>{{ webTitle }}</strong>
               </p>
@@ -60,7 +60,7 @@
                 </div>
               </div>
             </div>
-            <div class="card-image column is-three-fifths">
+            <div class="card-image column is-half">
               <figure class="image">
                 <img
                   class="i"
@@ -111,6 +111,4 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="sass" scoped>
 @import '../mq'
-.mgn
-  margin: 2em
 </style>
