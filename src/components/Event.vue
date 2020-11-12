@@ -15,7 +15,7 @@
                 See you then!
               </p>
               <a
-                href="url"
+                :href="url"
                 class="button is-large is-primary"
                 id="learn"
                 target="_blank"
