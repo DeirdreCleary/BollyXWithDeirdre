@@ -1,4 +1,4 @@
-# bollyxwithdeirdre
+# Dance With Deirdre
 
 ## Project setup
 ```
