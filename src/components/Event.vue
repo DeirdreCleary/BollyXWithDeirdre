@@ -31,7 +31,7 @@
                   <span class="title">{{ meetingTitle }}</span>
                   <span class="description"
                     >{{ description }} <br /><br />Get the latest details at
-                    https://bollyxwithdeirdre.netlify.app/<br /><br />Join Zoom
+                    https://dancewithdeirdre.netlify.app/<br /><br />Join Zoom
                     Meeting <br />{{ url }} <br /><br />Meeting ID:
                     {{ meetingId }} <br />Passcode: {{ passcode }}</span
                   >
@@ -51,7 +51,7 @@
                   <span class="title">{{ meetingTitle }}</span>
                   <span class="description"
                     >{{ description }} <br /><br />Get the latest details at
-                    https://bollyxwithdeirdre.netlify.app/<br /><br />Join Zoom
+                    https://dancewithdeirdre.netlify.app/<br /><br />Join Zoom
                     Meeting <br />{{ url }} <br /><br />Meeting ID:
                     {{ meetingId }} <br />Passcode: {{ passcode }}</span
                   >

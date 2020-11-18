@@ -30,9 +30,9 @@ export default {
   name: "Hero",
   data() {
     return {
-      heading: "BollyX with Deirdre",
+      heading: "Dance with Deirdre",
       subheading:
-        "A Bollywood inspired workout guaranteed to get your heartrate up and put a smile on your face"
+        "Join me for BollyX, a Bollywood inspired workout guaranteed to get your heartrate up and put a smile on your face"
     };
   },
   props: {
