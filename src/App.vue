@@ -56,7 +56,7 @@
                 target="_blank"
                 id="learn"
               >
-                <span>Join Now</span>
+                <span>Join Class</span>
               </a>
             </div>
           </div>
@@ -124,6 +124,10 @@ export default {
     border: none
     color: black
     background-color: white
+    +tablet-only
+      background-color: $primary
+    +mobile
+      background-color: $primary
     &:hover
       color: $primary
       background-color: black
