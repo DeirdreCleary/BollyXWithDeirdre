@@ -8,7 +8,7 @@
       <div class="container">
         <div class="navbar-brand">
           <router-link to="/" class="navbar-item"
-            >BollyX With Deirdre</router-link
+            >Dance With Deirdre</router-link
           >
 
           <a
