@@ -48,17 +48,6 @@
               class="navbar-item r-item"
               >Contact</router-link
             >
-
-            <div class="navbar-item">
-              <a
-                class="button"
-                href="https://us02web.zoom.us/j/85401207030?pwd=enJhVmZKZzQ5ckt6MWFUd080d2JuUT09"
-                target="_blank"
-                id="learn"
-              >
-                <span>Join Class</span>
-              </a>
-            </div>
           </div>
         </div>
       </div>

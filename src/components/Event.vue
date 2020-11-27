@@ -17,10 +17,18 @@
               <a
                 :href="url"
                 class="button is-large is-primary"
+                v-bind:class="{ disabled: !isInProgress }"
                 id="learn"
                 target="_blank"
-                >Join class</a
+                :disabled="isInProgress ? null : 'disabled'"
+                >Join Zoom class</a
               >
+              <div
+                v-if="!isInProgress"
+                class="has-text-weight-light is-italic is-size-7"
+              >
+                Link available an hour before the class
+              </div>
               <div>
                 <div title="Add to Calendar" class="addeventatc button">
                   Add to calendar
@@ -77,12 +85,15 @@
 </template>
 
 <script>
+import moment from "moment";
+
 export default {
   name: "Event",
   data: function() {
     return {
       date_format: "DD/MM/YYYY",
-      timezone: "Europe/Dublin"
+      timezone: "Europe/Dublin",
+      isInProgress: false
     };
   },
   props: {
@@ -104,6 +115,52 @@ export default {
       "https://addevent.com/libs/atc/1.6.1/atc.min.js"
     );
     document.head.appendChild(externalScript);
+
+    this.isInProgress = this.checkIfIsInProgress();
+  },
+  methods: {
+    getDayOfWeek: function(recurring) {
+      var dayCode = recurring.substring(recurring.indexOf("BYDAY=") + 6);
+      switch (dayCode) {
+        case "MO":
+          return 1;
+        case "TU":
+          return 2;
+        case "WE":
+          return 3;
+        case "TH":
+          return 4;
+        case "FR":
+          return 5;
+        case "SA":
+          return 6;
+        case "SU":
+          return 0;
+      }
+    },
+    checkIfIsInProgress: function() {
+      var current = moment();
+      
+      if (this.recurring) {
+        var dayOfWeek = this.getDayOfWeek(this.recurring);
+        if (!current.isSame(dayOfWeek, "d")) {
+          return false;
+        }
+        var startTime = moment(
+          this.start.substring(this.start.indexOf(" ") + 1),
+          "HH:mm a"
+        ).subtract(1, "h");
+        var endTime = moment(
+          this.end.substring(this.end.indexOf(" ") + 1),
+          "HH:mm a"
+        );
+        return current.isBetween(startTime, endTime);
+      } else {
+        var start = moment(this.start, "DD-MM-YYYY HH:mm a").subtract(1, "h");
+        var end = moment(this.end, "DD-MM-YYYY HH:mm a");
+        return current.isBetween(start, end);
+      }
+    }
   }
 };
 </script>
@@ -111,4 +168,6 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="sass" scoped>
 @import '../mq'
+a.disabled
+  pointer-events: none
 </style>
