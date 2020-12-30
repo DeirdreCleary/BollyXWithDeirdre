@@ -68,6 +68,11 @@
                 </div>
               </div>
               <br />
+              <p class="is-italic is-size-7">
+              If you would like to support my classes, please consider contributing below. 
+              <br/>
+              Suggested amount is €3 per class.
+              </p>
               <form
                 action="https://www.paypal.com/donate"
                 method="post"
@@ -76,7 +81,7 @@
                 <input
                   type="hidden"
                   name="hosted_button_id"
-                  value="TJS4PW896S556"
+                  value="B4WBMBNJ9RBTY"
                 />
                 <input
                   type="image"
