@@ -143,7 +143,7 @@ export default {
       
       if (this.recurring) {
         var dayOfWeek = this.getDayOfWeek(this.recurring);
-        if (!current.isSame(dayOfWeek, "d")) {
+        if (current.day() != dayOfWeek) {
           return false;
         }
         var startTime = moment(
