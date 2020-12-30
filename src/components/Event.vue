@@ -91,9 +91,11 @@ export default {
   name: "Event",
   data: function() {
     return {
-      date_format: "DD/MM/YYYY",
+      date_format: "DD-MM-YYYY",
       timezone: "Europe/Dublin",
-      isInProgress: false
+      isInProgress: false,
+      start: "",
+      end: ""
     };
   },
   props: {
@@ -101,8 +103,9 @@ export default {
     meetingTitle: String,
     description: String,
     image: String,
-    start: String,
-    end: String,
+    date: String,
+    startTime: String,
+    endTime: String,
     url: String,
     meetingId: String,
     passcode: String,
@@ -116,6 +119,16 @@ export default {
     );
     document.head.appendChild(externalScript);
 
+    if (!this.recurring) {
+      this.start = this.date + " " + this.startTime;
+      this.end = this.date + " " + this.endTime;
+    } else {
+      var dayOfWeek = this.getDayOfWeek(this.recurring);
+      var nextClass = this.getNextDayOfWeek(dayOfWeek, moment());
+      this.start = nextClass + " " + this.startTime;
+      this.end = nextClass + " " + this.endTime;
+    }
+    console.log(this.start);
     this.isInProgress = this.checkIfIsInProgress();
   },
   methods: {
@@ -138,28 +151,23 @@ export default {
           return 0;
       }
     },
+    getNextDayOfWeek: function(dayOfWeek, current) {
+      var currentDay = current.day();
+      if (currentDay == dayOfWeek) {
+        return current.format("DD-MM-YYYY");
+      }
+      if (currentDay < dayOfWeek) {
+        return current.add(dayOfWeek - currentDay, "d").format("DD-MM-YYYY");
+      }
+      return current
+        .add(7 + (dayOfWeek - currentDay), "d")
+        .format("DD-MM-YYYY");
+    },
     checkIfIsInProgress: function() {
       var current = moment();
-      
-      if (this.recurring) {
-        var dayOfWeek = this.getDayOfWeek(this.recurring);
-        if (current.day() != dayOfWeek) {
-          return false;
-        }
-        var startTime = moment(
-          this.start.substring(this.start.indexOf(" ") + 1),
-          "HH:mm a"
-        ).subtract(1, "h");
-        var endTime = moment(
-          this.end.substring(this.end.indexOf(" ") + 1),
-          "HH:mm a"
-        );
-        return current.isBetween(startTime, endTime);
-      } else {
-        var start = moment(this.start, "DD-MM-YYYY HH:mm a").subtract(1, "h");
-        var end = moment(this.end, "DD-MM-YYYY HH:mm a");
-        return current.isBetween(start, end);
-      }
+      var start = moment(this.start, "DD-MM-YYYY HH:mm a").subtract(1, "h");
+      var end = moment(this.end, "DD-MM-YYYY HH:mm a");
+      return current.isBetween(start, end);
     }
   }
 };
