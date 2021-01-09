@@ -44,12 +44,16 @@
 </template>
 
 <script>
-import json from "../json/faq.json";
+import { readFaqs } from "../firebase";
+
 export default {
   data() {
     return {
-      faqs: json
+      faqs: []
     };
+  },
+  mounted() {
+    readFaqs(this.faqs);
   }
 };
 </script>

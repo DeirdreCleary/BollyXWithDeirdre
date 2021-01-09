@@ -21,18 +21,21 @@
 </template>
 
 <script>
+import { readEvents } from "../firebase";
 import Hero from "../components/Hero";
 import Spotify from "../components/Spotify";
 import Event from "../components/Event";
-import json from "../json/events.json";
 
 export default {
   name: "home",
   components: { Hero, Spotify, Event },
   data() {
     return {
-      events: json
+      events: []
     };
+  },
+  mounted() {
+    readEvents(this.events);
   }
 };
 </script>

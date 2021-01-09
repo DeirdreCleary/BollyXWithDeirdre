@@ -69,9 +69,10 @@
               </div>
               <br />
               <p class="is-italic is-size-7">
-              If you would like to support my classes, please consider contributing below. 
-              <br/>
-              Suggested amount is €3 per class.
+                If you would like to support my classes, please consider
+                contributing below.
+                <br />
+                Suggested amount is €3 per class.
               </p>
               <form
                 action="https://www.paypal.com/donate"
@@ -91,22 +92,11 @@
                   title="PayPal - The safer, easier way to pay online!"
                   alt="Donate with PayPal button"
                 />
-                <img
-                  alt=""
-                  border="0"
-                  src="https://www.paypal.com/en_IE/i/scr/pixel.gif"
-                  width="1"
-                  height="1"
-                />
               </form>
             </div>
             <div class="card-image column is-half">
               <figure class="image">
-                <img
-                  class="i"
-                  :src="require(`../assets/${image}`)"
-                  alt="Class details"
-                />
+                <img class="i" :src="imageUrl" alt="Class details" />
               </figure>
             </div>
           </div>
@@ -118,6 +108,7 @@
 
 <script>
 import moment from "moment";
+import { getImage } from "../firebase";
 
 export default {
   name: "Event",
@@ -127,7 +118,8 @@ export default {
       timezone: "Europe/Dublin",
       isInProgress: false,
       start: "",
-      end: ""
+      end: "",
+      imageUrl: ""
     };
   },
   props: {
@@ -143,14 +135,14 @@ export default {
     passcode: String,
     recurring: String
   },
-  mounted() {
+  async mounted() {
     let externalScript = document.createElement("script");
     externalScript.setAttribute(
       "src",
       "https://addevent.com/libs/atc/1.6.1/atc.min.js"
     );
-    document.head.appendChild(externalScript);
-
+    document.head.appendChild(externalScript); 
+    this.imageUrl = await getImage(this.image);
     if (!this.recurring) {
       this.start = this.date + " " + this.startTime;
       this.end = this.date + " " + this.endTime;
@@ -160,7 +152,6 @@ export default {
       this.start = nextClass + " " + this.startTime;
       this.end = nextClass + " " + this.endTime;
     }
-    console.log(this.start);
     this.isInProgress = this.checkIfIsInProgress();
   },
   methods: {

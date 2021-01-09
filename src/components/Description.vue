@@ -28,7 +28,7 @@
           <div class="columns">
             <div class="card-image column is-two-fifths">
               <figure class="image">
-                <img src="../assets/Instructor.jpeg" alt="Instructor" />
+                <img :src="imageUrl" alt="Instructor" />
               </figure>
             </div>
             <div class="column is-three-fifths">
@@ -66,8 +66,18 @@
 </template>
 
 <script>
+import { getImage } from "../firebase";
+
 export default {
-  name: "Description"
+  name: "Description",
+  data: function() {
+    return {
+      imageUrl: ""
+    };
+  },
+  async mounted() {
+    this.imageUrl = await getImage("Instructor.jpeg");
+  },
 };
 </script>
 
