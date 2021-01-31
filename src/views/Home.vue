@@ -14,6 +14,7 @@
         :meetingId="event.meetingId"
         :passcode="event.passcode"
         :url="event.url"
+        :free="event.free"
       />
     </div>
     <Spotify />

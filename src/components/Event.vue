@@ -68,13 +68,14 @@
                 </div>
               </div>
               <br />
-              <p class="is-italic is-size-7">
+              <p v-if="!free" class="is-italic is-size-7">
                 If you would like to support my classes, please consider
                 contributing below.
                 <br />
                 Suggested amount is €3 per class.
               </p>
               <form
+                v-if="!free"
                 action="https://www.paypal.com/donate"
                 method="post"
                 target="_top"
@@ -133,7 +134,8 @@ export default {
     url: String,
     meetingId: String,
     passcode: String,
-    recurring: String
+    recurring: String,
+    free: String
   },
   async mounted() {
     let externalScript = document.createElement("script");
@@ -141,7 +143,7 @@ export default {
       "src",
       "https://addevent.com/libs/atc/1.6.1/atc.min.js"
     );
-    document.head.appendChild(externalScript); 
+    document.head.appendChild(externalScript);
     this.imageUrl = await getImage(this.image);
     if (!this.recurring) {
       this.start = this.date + " " + this.startTime;
