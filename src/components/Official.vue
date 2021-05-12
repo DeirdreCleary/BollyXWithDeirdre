@@ -95,5 +95,5 @@ export default {
   margin-right: 20px
 
 .section
-    background: $primary
+    background: $fadedprimary
 </style>
