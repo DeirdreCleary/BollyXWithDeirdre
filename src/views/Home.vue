@@ -18,6 +18,7 @@
       />
     </div>
     <Spotify />
+    <Instagram />
   </div>
 </template>
 
@@ -26,10 +27,11 @@ import { readEvents } from "../firebase";
 import Hero from "../components/Hero";
 import Spotify from "../components/Spotify";
 import Event from "../components/Event";
+import Instagram from "../components/Instagram";
 
 export default {
   name: "home",
-  components: { Hero, Spotify, Event },
+  components: { Hero, Spotify, Event, Instagram },
   data() {
     return {
       events: []
