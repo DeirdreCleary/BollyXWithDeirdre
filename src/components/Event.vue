@@ -25,7 +25,7 @@
               >
               <div
                 v-if="!isInProgress"
-                class="has-text-weight-light is-italic is-size-7"
+                class="has-text-weight-light is-size-7"
               >
                 Link available an hour before the class
               </div>
@@ -68,32 +68,18 @@
                 </div>
               </div>
               <br />
-              <p v-if="!free" class="is-italic is-size-7">
+              <p v-if="!free" class="is-size-7">
                 If you would like to support my classes, please consider
                 contributing below.
                 <br />
                 Suggested amount is €3 per class.
               </p>
-              <form
-                v-if="!free"
-                action="https://www.paypal.com/donate"
-                method="post"
-                target="_top"
+              <a
+                class="paybutton button"
+                href="https://paypal.me/bollyxwithdeirdre"
+                target="_blank"
+                >PayPal</a
               >
-                <input
-                  type="hidden"
-                  name="hosted_button_id"
-                  value="B4WBMBNJ9RBTY"
-                />
-                <input
-                  type="image"
-                  src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif"
-                  border="0"
-                  name="submit"
-                  title="PayPal - The safer, easier way to pay online!"
-                  alt="Donate with PayPal button"
-                />
-              </form>
             </div>
             <div class="card-image column is-half">
               <figure class="image">
@@ -203,4 +189,13 @@ export default {
 @import '../mq'
 a.disabled
   pointer-events: none
+
+.paybutton
+  border: none
+  background-color: $fadedprimary
+
+  &:hover
+    color: white !important
+    text-decoration: none
+    background-color: black
 </style>
