@@ -25,7 +25,9 @@ const faqsCollection = db.ref("faqs");
 function readCollection(collection, arr) {
   collection.on("value", function(querySnapshot) {
     querySnapshot.forEach((i) => {
-      arr.push(i.val());
+      if(!i.val().cancelled){
+        arr.push(i.val());
+      }
     });
   });
 }
