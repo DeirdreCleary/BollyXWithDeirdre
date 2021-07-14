@@ -1,7 +1,6 @@
 <template>
   <div class="home">
     <Hero showLearnMore />
-    <Cancellation />
     <div v-for="event in events" :key="event.title">
       <Event
         :webTitle="event.webTitle"
@@ -26,14 +25,13 @@
 <script>
 import { readEvents } from "../firebase";
 import Hero from "../components/Hero";
-import Cancellation from "../components/Cancellation";
 import Spotify from "../components/Spotify";
 import Event from "../components/Event";
 import Instagram from "../components/Instagram";
 
 export default {
   name: "home",
-  components: { Hero, Spotify, Event, Instagram, Cancellation },
+  components: { Hero, Spotify, Event, Instagram },
   data() {
     return {
       events: []
